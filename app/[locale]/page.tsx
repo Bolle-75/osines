@@ -733,6 +733,26 @@ export default async function Home({ params }: PageProps) {
 
               <div className="mt-10 space-y-6">
 
+                {/* DIRECT EMAIL */}
+                <a
+                  href="mailto:info@osines.com"
+                  className="group flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-[#1685D8]/40 hover:bg-white/10"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10">
+                    <span className="text-[#62B532]">@</span>
+                  </div>
+
+                  <div>
+                    <p className="font-semibold">info@osines.com</p>
+                    <p className="mt-1 text-sm text-white/50">
+                      {currentLocale === "de" && "Direkter Kontakt per E-Mail."}
+                      {currentLocale === "es" && "Contacto directo por correo electrónico."}
+                      {currentLocale === "en" && "Direct contact by email."}
+                      {currentLocale === "ru" && "Прямой контакт по электронной почте."}
+                    </p>
+                  </div>
+                </a>
+
                 <div className="flex gap-4">
 
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10">
@@ -827,7 +847,9 @@ export default async function Home({ params }: PageProps) {
             {/* FORM */}
             <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
 
-              <form className="space-y-6">
+              <form action="/api/contact" method="POST" className="space-y-6">
+              <input type="hidden" name="locale" value={locale} />
+
 
                 {/* NAME + PHONE */}
                 <div className="grid gap-6 md:grid-cols-2">
@@ -1010,9 +1032,17 @@ export default async function Home({ params }: PageProps) {
             © {new Date().getFullYear()} OSINES
           </span>
 
-          <span>
-            {t.footer}
-          </span>
+          <div className="flex flex-col gap-1 sm:items-end">
+            <span>
+              {t.footer}
+            </span>
+            <a
+              href="mailto:info@osines.com"
+              className="transition hover:text-[#1685D8]"
+            >
+              info@osines.com
+            </a>
+          </div>
 
         </div>
 
