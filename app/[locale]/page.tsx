@@ -865,33 +865,56 @@ export default async function Home({ params }: PageProps) {
         </div>
       </section>
 
+    <footer className="border-t border-slate-200 px-6 py-8 lg:px-10">
+  <div className="mx-auto flex max-w-7xl flex-col gap-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+    <span>
+      © {new Date().getFullYear()} OSINES
+    </span>
 
-      {/* =========================
-          FOOTER
-      ========================== */}
-      <footer className="border-t border-slate-200 px-6 py-8 lg:px-10">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+      <span>{t.footer}</span>
 
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-sm text-slate-500 sm:flex-row">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <a
+          href={`/${currentLocale}/aviso-legal`}
+          className="transition hover:text-[#1685D8]"
+        >
+          {currentLocale === "es" && "Aviso Legal"}
+          {currentLocale === "en" && "Legal Notice"}
+          {currentLocale === "de" && "Impressum"}
+          {currentLocale === "ru" && "Правовая информация"}
+        </a>
 
-          <span>
-            © {new Date().getFullYear()} OSINES
-          </span>
+        <a
+          href={`/${currentLocale}/politica-de-privacidad`}
+          className="transition hover:text-[#1685D8]"
+        >
+          {currentLocale === "es" && "Privacidad"}
+          {currentLocale === "en" && "Privacy"}
+          {currentLocale === "de" && "Datenschutz"}
+          {currentLocale === "ru" && "Конфиденциальность"}
+        </a>
 
-          <div className="flex flex-col gap-1 sm:items-end">
-            <span>
-              {t.footer}
-            </span>
-            <a
-              href="mailto:info@osines.com"
-              className="transition hover:text-[#1685D8]"
-            >
-              info@osines.com
-            </a>
-          </div>
+        <a
+          href={`/${currentLocale}/politica-de-cookies`}
+          className="transition hover:text-[#1685D8]"
+        >
+          {currentLocale === "es" && "Cookies"}
+          {currentLocale === "en" && "Cookies"}
+          {currentLocale === "de" && "Cookies"}
+          {currentLocale === "ru" && "Cookies"}
+        </a>
 
-        </div>
-
-      </footer>
+        <a
+          href="mailto:info@osines.com"
+          className="transition hover:text-[#1685D8]"
+        >
+          info@osines.com
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
 
     </main>
   );
