@@ -1,5 +1,6 @@
 import Image from "next/image";
 import LanguageSwitcher from "../components/LanguageSwitcher";
+import ContactForm from "../components/ContactForm";
 import { locales, translations, type Locale } from "../i18n/translations";
 
 type PageProps = {
@@ -847,172 +848,12 @@ export default async function Home({ params }: PageProps) {
             {/* FORM */}
             <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
 
-              <form action="/api/contact" method="POST" className="space-y-6">
-              <input type="hidden" name="locale" value={locale} />
+             <ContactForm
+             locale={currentLocale}
+             formText={formText}
+             />
 
-
-                {/* NAME + PHONE */}
-                <div className="grid gap-6 md:grid-cols-2">
-
-                  <div>
-
-                    <label className="mb-2 block text-sm font-semibold text-[#123B66]">
-                      {formText.name}
-                    </label>
-
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      placeholder={formText.name}
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-[#123B66] outline-none transition placeholder:text-slate-400 focus:border-[#1685D8] focus:bg-white focus:ring-2 focus:ring-[#1685D8]/10"
-                    />
-
-                  </div>
-
-
-                  <div>
-
-                    <label className="mb-2 block text-sm font-semibold text-[#123B66]">
-                      {formText.phone}
-                    </label>
-
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      placeholder={formText.phone}
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-[#123B66] outline-none transition placeholder:text-slate-400 focus:border-[#1685D8] focus:bg-white focus:ring-2 focus:ring-[#1685D8]/10"
-                    />
-
-                  </div>
-
-                </div>
-
-
-                {/* EMAIL + PROPERTY */}
-                <div className="grid gap-6 md:grid-cols-2">
-
-                  <div>
-
-                    <label className="mb-2 block text-sm font-semibold text-[#123B66]">
-                      {formText.email}
-                    </label>
-
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder={formText.email}
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-[#123B66] outline-none transition placeholder:text-slate-400 focus:border-[#1685D8] focus:bg-white focus:ring-2 focus:ring-[#1685D8]/10"
-                    />
-
-                  </div>
-
-
-                  <div>
-
-                    <label className="mb-2 block text-sm font-semibold text-[#123B66]">
-                      {formText.property}
-                    </label>
-
-                    <input
-                      type="text"
-                      name="property"
-                      required
-                      placeholder={formText.property}
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-[#123B66] outline-none transition placeholder:text-slate-400 focus:border-[#1685D8] focus:bg-white focus:ring-2 focus:ring-[#1685D8]/10"
-                    />
-
-                  </div>
-
-                </div>
-
-
-                {/* DAMAGE TYPE */}
-                <div>
-
-                  <label className="mb-2 block text-sm font-semibold text-[#123B66]">
-                    {formText.damage}
-                  </label>
-
-                  <select
-                    name="damage"
-                    required
-                    defaultValue=""
-                    className="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-[#123B66] outline-none transition focus:border-[#1685D8] focus:bg-white focus:ring-2 focus:ring-[#1685D8]/10"
-                  >
-
-                    <option value="" disabled>
-                      {formText.selectDamage}
-                    </option>
-
-                    <option value="water">
-                      {formText.water}
-                    </option>
-
-                    <option value="leak">
-                      {formText.leak}
-                    </option>
-
-                    <option value="drying">
-                      {formText.drying}
-                    </option>
-
-                    <option value="restoration">
-                      {formText.restoration}
-                    </option>
-
-                    <option value="other">
-                      {formText.other}
-                    </option>
-
-                  </select>
-
-                </div>
-
-
-                {/* DESCRIPTION */}
-                <div>
-
-                  <label className="mb-2 block text-sm font-semibold text-[#123B66]">
-                    {formText.description}
-                  </label>
-
-                  <textarea
-                    name="description"
-                    required
-                    rows={5}
-                    placeholder={formText.damagePlaceholder}
-                    className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-[#123B66] outline-none transition placeholder:text-slate-400 focus:border-[#1685D8] focus:bg-white focus:ring-2 focus:ring-[#1685D8]/10"
-                  />
-
-                </div>
-
-
-                {/* SUBMIT */}
-                <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
-
-                  <p className="text-xs text-slate-400">
-                    {formText.required}
-                  </p>
-
-                  <button
-                    type="submit"
-                    className="rounded-full bg-[#123B66] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#1685D8]"
-                  >
-                    {formText.send}
-                  </button>
-
-                </div>
-
-
-                <p className="text-center text-xs text-slate-400">
-                  {formText.note}
-                </p>
-
-              </form>
-
+              
             </div>
 
           </div>
