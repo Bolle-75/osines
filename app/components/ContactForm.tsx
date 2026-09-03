@@ -17,6 +17,7 @@ type ContactFormProps = {
     leak: string;
     drying: string;
     restoration: string;
+    mold: string;
     other: string;
     send: string;
     note: string;
@@ -218,6 +219,10 @@ export default function ContactForm({
 
             <option value="restoration">
               {formText.restoration}
+            </option>
+
+            <option value="mold">
+              {formText.mold}
             </option>
 
             <option value="other">
