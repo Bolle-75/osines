@@ -268,7 +268,63 @@ export default function ContactForm({
               : formText.send}
           </button>
         </div>
+<p className="mx-auto max-w-2xl text-center text-xs leading-5 text-slate-400">
+  {locale === "es" && (
+    <>
+      Sus datos serán tratados para gestionar su solicitud de servicio.
+      Puede consultar nuestra{" "}
+      <a
+        href="/es/politica-de-privacidad"
+        className="font-semibold text-[#1685D8] hover:underline"
+      >
+        Política de Privacidad
+      </a>
+      .
+    </>
+  )}
 
+  {locale === "en" && (
+    <>
+      Your data will be processed to manage your service request.
+      Please see our{" "}
+      <a
+        href="/en/politica-de-privacidad"
+        className="font-semibold text-[#1685D8] hover:underline"
+      >
+        Privacy Policy
+      </a>
+      .
+    </>
+  )}
+
+  {locale === "de" && (
+    <>
+      Ihre Daten werden zur Bearbeitung Ihrer Serviceanfrage verarbeitet.
+      Weitere Informationen finden Sie in unserer{" "}
+      <a
+        href="/de/politica-de-privacidad"
+        className="font-semibold text-[#1685D8] hover:underline"
+      >
+        Datenschutzerklärung
+      </a>
+      .
+    </>
+  )}
+
+  {locale === "ru" && (
+    <>
+      Ваши данные будут обрабатываться для рассмотрения вашего запроса.
+      Подробнее см. в нашей{" "}
+      <a
+        href="/ru/politica-de-privacidad"
+        className="font-semibold text-[#1685D8] hover:underline"
+      >
+        Политике конфиденциальности
+      </a>
+      .
+    </>
+  )}
+</p>
         <p className="text-center text-xs text-slate-400">
           {formText.note}
         </p>
