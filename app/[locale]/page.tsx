@@ -112,12 +112,14 @@ export default async function Home({ params }: PageProps) {
       {/* =========================
           HEADER
       ========================== */}
-      <header className="fixed top-0 z-50 w-full border-b border-slate-100 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
-
+      {/* =========================
+          HEADER
+      ========================== */}
+      <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white">
+        <div className="mx-auto flex h-[78px] max-w-7xl items-center justify-between px-5 lg:px-10">
           <a
             href={`/${currentLocale}`}
-            className="flex items-center"
+            className="flex shrink-0 items-center"
           >
             <Image
               src="/osines-logo.png"
@@ -125,12 +127,11 @@ export default async function Home({ params }: PageProps) {
               width={220}
               height={80}
               priority
-              className="h-14 w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
-
+          <nav className="hidden items-center gap-8 text-sm font-semibold text-[#123B66] lg:flex">
             <a
               href={`/${currentLocale}#inicio`}
               className="transition hover:text-[#1685D8]"
@@ -158,106 +159,209 @@ export default async function Home({ params }: PageProps) {
             >
               {t.nav.contact}
             </a>
-
           </nav>
 
-          <LanguageSwitcher />
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
 
+            <a
+              href={`/${currentLocale}#contacto`}
+              className="hidden rounded-full bg-[#123B66] px-5 py-3 text-xs font-bold text-white transition hover:bg-[#1685D8] sm:inline-flex"
+            >
+              {t.hero.primaryButton}
+            </a>
+          </div>
         </div>
       </header>
 
-
-      {/* =========================
+          {/* =========================
           HERO
       ========================== */}
       <section
         id="inicio"
-        className="relative flex min-h-screen items-center overflow-hidden pt-20"
+        className="relative overflow-hidden bg-white"
       >
+        <div className="mx-auto grid max-w-7xl lg:min-h-[700px] lg:grid-cols-[0.92fr_1.08fr]">
 
-        <div className="absolute right-[-180px] top-20 h-[500px] w-[500px] rounded-full bg-[#1685D8]/5" />
+          {/* HERO TEXT */}
+          <div className="relative z-20 flex items-center px-6 py-16 sm:px-10 lg:px-12 xl:px-16">
+            <div className="max-w-2xl">
 
-        <div className="absolute bottom-[-180px] left-[-120px] h-[450px] w-[450px] rounded-full bg-[#62B532]/5" />
-
-        <div className="relative mx-auto grid w-full max-w-7xl gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10">
-
-          <div className="flex flex-col justify-center">
-
-            <div className="mb-6 inline-flex w-fit items-center rounded-full border border-[#1685D8]/20 bg-[#1685D8]/5 px-4 py-2 text-xs font-semibold tracking-[0.18em] text-[#1685D8]">
-              {t.hero.badge}
-            </div>
-
-            <h1 className="max-w-3xl text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              {t.hero.title1}
-              <br />
-              {t.hero.title2}
-              <br />
-              <span className="text-[#1685D8]">
-                {t.hero.title3}
+              <span className="text-xs font-bold uppercase tracking-[0.28em] text-[#1685D8]">
+                {currentLocale === "de" && "PROFESSIONELLE LÖSUNGEN"}
+                {currentLocale === "es" && "SOLUCIONES PROFESIONALES"}
+                {currentLocale === "en" && "PROFESSIONAL SOLUTIONS"}
+                {currentLocale === "ru" && "ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ"}
               </span>
-            </h1>
 
-            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600">
-              {t.hero.description}
-            </p>
+              <h1 className="mt-6 text-5xl font-extrabold leading-[1.02] tracking-[-0.04em] text-[#123B66] sm:text-6xl xl:text-[68px]">
+  {currentLocale === "de" && (
+    <>
+      Wir machen sichtbar,
+      <br />
+      was verborgen
+      <br />
+      <span className="text-[#1685D8]">bleibt.</span>
+    </>
+  )}
 
-            <div className="mt-10 flex flex-wrap gap-4">
+  {currentLocale === "es" && (
+    <>
+      Hacemos visible
+      <br />
+      lo que permanece
+      <br />
+      <span className="text-[#1685D8]">oculto.</span>
+    </>
+  )}
 
-              <a
-                href={`/${currentLocale}#contacto`}
-                className="rounded-full bg-[#123B66] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#1685D8]"
-              >
-                {t.hero.primaryButton}
-              </a>
+  {currentLocale === "en" && (
+    <>
+      We make visible
+      <br />
+      what remains
+      <br />
+      <span className="text-[#1685D8]">hidden.</span>
+    </>
+  )}
 
-              <a
-                href={`/${currentLocale}#servicios`}
-                className="rounded-full border border-[#123B66]/20 px-7 py-4 text-sm font-semibold text-[#123B66] transition hover:border-[#1685D8] hover:text-[#1685D8]"
-              >
-                {t.hero.secondaryButton}
-              </a>
+  {currentLocale === "ru" && (
+    <>
+      Мы делаем видимым
+      <br />
+      то, что остаётся
+      <br />
+      <span className="text-[#1685D8]">скрытым.</span>
+    </>
+  )}
+</h1>
 
+              <p className="mt-7 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+                {currentLocale === "de" &&
+                  "Leckortung, technische Trocknung, Wiederherstellung und Schimmelbeseitigung – professionell koordiniert an der Costa Blanca."}
+
+                {currentLocale === "es" &&
+                  "Detección de fugas, secado técnico, restauración y eliminación de moho – soluciones profesionales en la Costa Blanca."}
+
+                {currentLocale === "en" &&
+                  "Leak detection, technical drying, restoration and mould removal – professional solutions across the Costa Blanca."}
+
+                {currentLocale === "ru" &&
+                  "Поиск утечек, техническая сушка, восстановление и удаление плесени — профессиональные решения на Коста-Бланке."}
+              </p>
+
+              <div className="mt-9 flex flex-wrap gap-3">
+                <a
+                  href={`/${currentLocale}#contacto`}
+                  className="inline-flex items-center rounded-full bg-[#1685D8] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-[#1685D8]/20 transition hover:bg-[#123B66]"
+                >
+                  {t.hero.primaryButton}
+                  <span className="ml-3 text-lg">→</span>
+                </a>
+
+                <a
+                  href={`/${currentLocale}#servicios`}
+                  className="inline-flex items-center rounded-full border border-slate-300 bg-white px-7 py-4 text-sm font-bold text-[#123B66] transition hover:border-[#1685D8] hover:text-[#1685D8]"
+                >
+                  {t.hero.secondaryButton}
+                </a>
+              </div>
+
+              {/* HERO BENEFITS */}
+              <div className="mt-12 grid max-w-xl grid-cols-3 gap-4 border-t border-slate-200 pt-7">
+
+                <div>
+                  <div className="text-xl font-bold text-[#1685D8]">01</div>
+                  <p className="mt-2 text-sm font-bold leading-5 text-[#123B66]">
+                    {currentLocale === "es"
+                      ? "Respuesta rápida"
+                      : currentLocale === "en"
+                        ? "Fast response"
+                        : currentLocale === "ru"
+                          ? "Быстрая реакция"
+                          : "Schnelle Reaktion"}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-500">
+                    {currentLocale === "es"
+                      ? "Cuando más lo necesita"
+                      : currentLocale === "en"
+                        ? "When you need it most"
+                        : currentLocale === "ru"
+                          ? "Когда это особенно важно"
+                          : "Wenn es darauf ankommt"}
+                  </p>
+                </div>
+
+                <div>
+                  <div className="text-xl font-bold text-[#1685D8]">02</div>
+                  <p className="mt-2 text-sm font-bold leading-5 text-[#123B66]">
+                    {currentLocale === "es"
+                      ? "Tecnología avanzada"
+                      : currentLocale === "en"
+                        ? "Advanced technology"
+                        : currentLocale === "ru"
+                          ? "Современная технология"
+                          : "Moderne Technik"}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-500">
+                    {currentLocale === "es"
+                      ? "Resultados precisos"
+                      : currentLocale === "en"
+                        ? "Precise results"
+                        : currentLocale === "ru"
+                          ? "Точные результаты"
+                          : "Präzise Ergebnisse"}
+                  </p>
+                </div>
+
+                <div>
+                  <div className="text-xl font-bold text-[#1685D8]">03</div>
+                  <p className="mt-2 text-sm font-bold leading-5 text-[#123B66]">
+                    {currentLocale === "es"
+                      ? "Profesionales cualificados"
+                      : currentLocale === "en"
+                        ? "Qualified professionals"
+                        : currentLocale === "ru"
+                          ? "Квалифицированные специалисты"
+                          : "Qualifizierte Fachkräfte"}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-500">
+                    {currentLocale === "es"
+                      ? "Su propiedad en buenas manos"
+                      : currentLocale === "en"
+                        ? "Your property in safe hands"
+                        : currentLocale === "ru"
+                          ? "Ваша недвижимость в надежных руках"
+                          : "Ihre Immobilie in guten Händen"}
+                  </p>
+                </div>
+
+              </div>
             </div>
-
           </div>
 
+         {/* HERO IMAGE */}
+<div className="relative min-h-[500px] overflow-hidden lg:min-h-[700px]">
 
-          <div className="flex items-center justify-center">
+  <Image
+    src="/osines-hero-thermografie.jpg"
+    alt="Inspección profesional de humedad con cámara termográfica"
+    fill
+    priority
+    sizes="(max-width: 1024px) 100vw, 58vw"
+    className="object-cover object-[35%_center]"
+  />
 
-            <div className="relative flex h-[420px] w-[420px] items-center justify-center">
+  {/* WEICHER VERLAUF ZUM TEXTBEREICH */}
+  <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white via-white/85 to-transparent" />
 
-              <div className="absolute h-[330px] w-[330px] rounded-full bg-[#1685D8]/5" />
+  {/* LEICHTE WEISSE AUFHELLUNG OBEN */}
+  <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/25 to-transparent" />
 
-              <div className="absolute h-[330px] w-[330px] rounded-full border border-[#1685D8]/10" />
-
-              <svg
-                viewBox="0 0 120 150"
-                className="relative h-64 w-52"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="
-                    M60 8
-                    C60 8 22 54 22 88
-                    C22 118 38 140 60 140
-                    C82 140 98 118 98 88
-                    C98 54 60 8 60 8Z
-                  "
-                  stroke="#1685D8"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-
-            </div>
-
-          </div>
+</div>
 
         </div>
       </section>
-
 
       {/* =========================
           SERVICES
