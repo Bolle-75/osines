@@ -175,193 +175,186 @@ export default async function Home({ params }: PageProps) {
       </header>
 
           {/* =========================
-          HERO
-      ========================== */}
-      <section
-        id="inicio"
-        className="relative overflow-hidden bg-white"
-      >
-        <div className="mx-auto grid max-w-7xl lg:min-h-[700px] lg:grid-cols-[0.92fr_1.08fr]">
+    HERO
+========================== */}
+<section
+  id="inicio"
+  className="relative isolate min-h-[760px] overflow-hidden bg-white"
+>
+  {/* HERO BILD – GESAMTE BREITE */}
+  <div className="absolute inset-0 -z-0">
+    <Image
+      src="/osines-hero-thermografie.jpg"
+      alt="Inspección profesional de humedad con cámara termográfica"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover object-[68%_center]"
+    />
 
-          {/* HERO TEXT */}
-          <div className="relative z-20 flex items-center px-6 py-16 sm:px-10 lg:px-12 xl:px-16">
-            <div className="max-w-2xl">
+    {/* GLEICHMÄSSIGER VERLAUF VON LINKS NACH RECHTS */}
+    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-[38%] via-white/65 via-[58%] to-transparent" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.28em] text-[#1685D8]">
-                {currentLocale === "de" && "PROFESSIONELLE LÖSUNGEN"}
-                {currentLocale === "es" && "SOLUCIONES PROFESIONALES"}
-                {currentLocale === "en" && "PROFESSIONAL SOLUTIONS"}
-                {currentLocale === "ru" && "ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ"}
-              </span>
+    {/* LEICHTER BLAUER TON AM RECHTEN RAND */}
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#1685D8]/10" />
+  </div>
 
-              <h1 className="mt-6 text-5xl font-extrabold leading-[1.02] tracking-[-0.04em] text-[#123B66] sm:text-6xl xl:text-[68px]">
-  {currentLocale === "de" && (
-    <>
-      Wir machen sichtbar,
-      <br />
-      was verborgen
-      <br />
-      <span className="text-[#1685D8]">bleibt.</span>
-    </>
-  )}
+  {/* HERO INHALT */}
+  <div className="relative z-10 mx-auto flex min-h-[760px] max-w-7xl items-center px-6 sm:px-10 lg:px-12 xl:px-16">
+    <div className="max-w-[620px] py-20">
 
-  {currentLocale === "es" && (
-    <>
-      Hacemos visible
-      <br />
-      lo que permanece
-      <br />
-      <span className="text-[#1685D8]">oculto.</span>
-    </>
-  )}
+      <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#1685D8]">
+        {currentLocale === "de" && "PROFESSIONELLE LÖSUNGEN"}
+        {currentLocale === "es" && "SOLUCIONES PROFESIONALES"}
+        {currentLocale === "en" && "PROFESSIONAL SOLUTIONS"}
+        {currentLocale === "ru" && "ПРОФЕССИОНАЛЬНЫЕ РЕШЕНИЯ"}
+      </span>
 
-  {currentLocale === "en" && (
-    <>
-      We make visible
-      <br />
-      what remains
-      <br />
-      <span className="text-[#1685D8]">hidden.</span>
-    </>
-  )}
+      <h1 className="mt-6 text-5xl font-extrabold leading-[1.02] tracking-[-0.04em] text-[#123B66] sm:text-6xl xl:text-[68px]">
+        {currentLocale === "de" && (
+          <>
+            Wir machen sichtbar,
+            <br />
+            was verborgen
+            <br />
+            <span className="text-[#1685D8]">bleibt.</span>
+          </>
+        )}
 
-  {currentLocale === "ru" && (
-    <>
-      Мы делаем видимым
-      <br />
-      то, что остаётся
-      <br />
-      <span className="text-[#1685D8]">скрытым.</span>
-    </>
-  )}
-</h1>
+        {currentLocale === "es" && (
+          <>
+            Hacemos visible
+            <br />
+            lo que permanece
+            <br />
+            <span className="text-[#1685D8]">oculto.</span>
+          </>
+        )}
 
-              <p className="mt-7 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
-                {currentLocale === "de" &&
-                  "Leckortung, technische Trocknung, Wiederherstellung und Schimmelbeseitigung – professionell koordiniert an der Costa Blanca."}
+        {currentLocale === "en" && (
+          <>
+            We make visible
+            <br />
+            what remains
+            <br />
+            <span className="text-[#1685D8]">hidden.</span>
+          </>
+        )}
 
-                {currentLocale === "es" &&
-                  "Detección de fugas, secado técnico, restauración y eliminación de moho – soluciones profesionales en la Costa Blanca."}
+        {currentLocale === "ru" && (
+          <>
+            Мы делаем видимым
+            <br />
+            то, что остаётся
+            <br />
+            <span className="text-[#1685D8]">скрытым.</span>
+          </>
+        )}
+      </h1>
 
-                {currentLocale === "en" &&
-                  "Leak detection, technical drying, restoration and mould removal – professional solutions across the Costa Blanca."}
+      <p className="mt-7 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+        {currentLocale === "de" &&
+          "Leckortung, technische Trocknung, Wiederherstellung und Schimmelbeseitigung – professionell koordiniert an der Costa Blanca."}
 
-                {currentLocale === "ru" &&
-                  "Поиск утечек, техническая сушка, восстановление и удаление плесени — профессиональные решения на Коста-Бланке."}
-              </p>
+        {currentLocale === "es" &&
+          "Detección de fugas, secado técnico, restauración y eliminación de moho – soluciones profesionales en la Costa Blanca."}
 
-              <div className="mt-9 flex flex-wrap gap-3">
-                <a
-                  href={`/${currentLocale}#contacto`}
-                  className="inline-flex items-center rounded-full bg-[#1685D8] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-[#1685D8]/20 transition hover:bg-[#123B66]"
-                >
-                  {t.hero.primaryButton}
-                  <span className="ml-3 text-lg">→</span>
-                </a>
+        {currentLocale === "en" &&
+          "Leak detection, technical drying, restoration and mould removal – professional solutions across the Costa Blanca."}
 
-                <a
-                  href={`/${currentLocale}#servicios`}
-                  className="inline-flex items-center rounded-full border border-slate-300 bg-white px-7 py-4 text-sm font-bold text-[#123B66] transition hover:border-[#1685D8] hover:text-[#1685D8]"
-                >
-                  {t.hero.secondaryButton}
-                </a>
-              </div>
+        {currentLocale === "ru" &&
+          "Поиск утечек, техническая сушка, восстановление и удаление плесени — профессиональные решения на Коста-Бланке."}
+      </p>
 
-              {/* HERO BENEFITS */}
-              <div className="mt-12 grid max-w-xl grid-cols-3 gap-4 border-t border-slate-200 pt-7">
+      <div className="mt-9 flex flex-wrap gap-3">
+        <a
+          href={`/${currentLocale}#contacto`}
+          className="inline-flex items-center rounded-full bg-[#1685D8] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-[#1685D8]/20 transition hover:bg-[#123B66]"
+        >
+          {t.hero.primaryButton}
+          <span className="ml-3 text-lg">→</span>
+        </a>
 
-                <div>
-                  <div className="text-xl font-bold text-[#1685D8]">01</div>
-                  <p className="mt-2 text-sm font-bold leading-5 text-[#123B66]">
-                    {currentLocale === "es"
-                      ? "Respuesta rápida"
-                      : currentLocale === "en"
-                        ? "Fast response"
-                        : currentLocale === "ru"
-                          ? "Быстрая реакция"
-                          : "Schnelle Reaktion"}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">
-                    {currentLocale === "es"
-                      ? "Cuando más lo necesita"
-                      : currentLocale === "en"
-                        ? "When you need it most"
-                        : currentLocale === "ru"
-                          ? "Когда это особенно важно"
-                          : "Wenn es darauf ankommt"}
-                  </p>
-                </div>
+        <a
+          href={`/${currentLocale}#servicios`}
+          className="inline-flex items-center rounded-full border border-slate-300 bg-white/80 px-7 py-4 text-sm font-bold text-[#123B66] backdrop-blur-sm transition hover:border-[#1685D8] hover:text-[#1685D8]"
+        >
+          {t.hero.secondaryButton}
+        </a>
+      </div>
 
-                <div>
-                  <div className="text-xl font-bold text-[#1685D8]">02</div>
-                  <p className="mt-2 text-sm font-bold leading-5 text-[#123B66]">
-                    {currentLocale === "es"
-                      ? "Tecnología avanzada"
-                      : currentLocale === "en"
-                        ? "Advanced technology"
-                        : currentLocale === "ru"
-                          ? "Современная технология"
-                          : "Moderne Technik"}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">
-                    {currentLocale === "es"
-                      ? "Resultados precisos"
-                      : currentLocale === "en"
-                        ? "Precise results"
-                        : currentLocale === "ru"
-                          ? "Точные результаты"
-                          : "Präzise Ergebnisse"}
-                  </p>
-                </div>
-
-                <div>
-                  <div className="text-xl font-bold text-[#1685D8]">03</div>
-                  <p className="mt-2 text-sm font-bold leading-5 text-[#123B66]">
-                    {currentLocale === "es"
-                      ? "Profesionales cualificados"
-                      : currentLocale === "en"
-                        ? "Qualified professionals"
-                        : currentLocale === "ru"
-                          ? "Квалифицированные специалисты"
-                          : "Qualifizierte Fachkräfte"}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">
-                    {currentLocale === "es"
-                      ? "Su propiedad en buenas manos"
-                      : currentLocale === "en"
-                        ? "Your property in safe hands"
-                        : currentLocale === "ru"
-                          ? "Ваша недвижимость в надежных руках"
-                          : "Ihre Immobilie in guten Händen"}
-                  </p>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-         {/* HERO IMAGE */}
-<div className="relative min-h-[500px] overflow-hidden lg:min-h-[700px]">
-
-  <Image
-    src="/osines-hero-thermografie.jpg"
-    alt="Inspección profesional de humedad con cámara termográfica"
-    fill
-    priority
-    sizes="(max-width: 1024px) 100vw, 58vw"
-    className="object-cover object-[35%_center]"
-  />
-
-  {/* WEICHER VERLAUF ZUM TEXTBEREICH */}
-  <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white via-white/85 to-transparent" />
-
-  {/* LEICHTE WEISSE AUFHELLUNG OBEN */}
-  <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/25 to-transparent" />
-
-</div>
-
+      <div className="mt-12 grid max-w-xl grid-cols-3 gap-5 border-t border-slate-200/80 pt-7">
+        <div>
+          <div className="text-xl font-bold text-[#1685D8]">01</div>
+          <p className="mt-2 text-sm font-bold text-[#123B66]">
+            {currentLocale === "es"
+              ? "Respuesta rápida"
+              : currentLocale === "en"
+                ? "Fast response"
+                : currentLocale === "ru"
+                  ? "Быстрая реакция"
+                  : "Schnelle Reaktion"}
+          </p>
+          <p className="mt-1 text-xs leading-5 text-slate-500">
+            {currentLocale === "es"
+              ? "Cuando más lo necesita"
+              : currentLocale === "en"
+                ? "When you need us most"
+                : currentLocale === "ru"
+                  ? "Когда это особенно важно"
+                  : "Wenn Sie uns am dringendsten brauchen"}
+          </p>
         </div>
-      </section>
+
+        <div>
+          <div className="text-xl font-bold text-[#1685D8]">02</div>
+          <p className="mt-2 text-sm font-bold text-[#123B66]">
+            {currentLocale === "es"
+              ? "Tecnología avanzada"
+              : currentLocale === "en"
+                ? "Advanced technology"
+                : currentLocale === "ru"
+                  ? "Современная технология"
+                  : "Moderne Technik"}
+          </p>
+          <p className="mt-1 text-xs leading-5 text-slate-500">
+            {currentLocale === "es"
+              ? "Resultados precisos"
+              : currentLocale === "en"
+                ? "Precise results"
+                : currentLocale === "ru"
+                  ? "Точные результаты"
+                  : "Präzise Ergebnisse"}
+          </p>
+        </div>
+
+        <div>
+          <div className="text-xl font-bold text-[#1685D8]">03</div>
+          <p className="mt-2 text-sm font-bold text-[#123B66]">
+            {currentLocale === "es"
+              ? "Profesionales cualificados"
+              : currentLocale === "en"
+                ? "Qualified professionals"
+                : currentLocale === "ru"
+                  ? "Квалифицированные специалисты"
+                  : "Qualifizierte Fachkräfte"}
+          </p>
+          <p className="mt-1 text-xs leading-5 text-slate-500">
+            {currentLocale === "es"
+              ? "Su propiedad en buenas manos"
+              : currentLocale === "en"
+                ? "Your property in safe hands"
+                : currentLocale === "ru"
+                  ? "Ваша недвижимость в надёжных руках"
+                  : "Ihre Immobilie in guten Händen"}
+        </p>
+         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* =========================
           SERVICES
@@ -394,51 +387,176 @@ export default async function Home({ params }: PageProps) {
           </div>
 
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+  {[...t.services.items,
+    currentLocale === "de"
+      ? "Schimmelbeseitigung"
+      : currentLocale === "es"
+        ? "Eliminación de moho"
+        : currentLocale === "en"
+          ? "Mould removal"
+          : "Удаление плесени"
+  ].map((service, index) => (
+    <div
+      key={service}
+      className="group relative overflow-hidden rounded-none border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+    >
+ <div className="relative -mx-8 -mt-8 mb-7 aspect-square overflow-hidden rounded-none">
+  
+   <Image
+    src={[
+      "/services/01-detection-leaks.jpg",
+      "/services/02-technical-drying.jpg",
+      "/services/03-water-damage.jpg",
+      "/services/04-restoration.jpg",
+      "/services/05-mold-removal.jpg",
+    ][index]}
+    alt={service}
+    fill
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
+    className="object-cover transition duration-500 group-hover:scale-105"
+  />
+</div>
 
-            {t.services.items.map((service, index) => (
+<div className="flex items-center justify-between">
+  <span className="text-sm font-bold tracking-[0.15em] text-[#62B532]">
+    {String(index + 1).padStart(2, "0")}
+  </span>
 
-              <div
-                key={service}
-                className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-              >
+  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF5FF] text-xl text-[#1685D8]">
+    +
+  </div>
+</div>
 
-                <div className="flex items-center justify-between">
+<div className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#123B66]">
+  <span className="text-white">
+  {index === 0 && (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className="h-7 w-7"
+    >
+      <circle cx="11" cy="11" r="6.5" />
+      <path d="m16 16 5 5" />
+    </svg>
+  )}
 
-                  <span className="text-sm font-bold tracking-[0.15em] text-[#62B532]">
-                    0{index + 1}
-                  </span>
+  {index === 1 && (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className="h-7 w-7"
+    >
+      <path d="M4 8c2.5-3 5.5-3 8 0s5.5 3 8 0" />
+      <path d="M4 12c2.5-3 5.5-3 8 0s5.5 3 8 0" />
+      <path d="M4 16c2.5-3 5.5-3 8 0s5.5 3 8 0" />
+    </svg>
+  )}
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1685D8]/10 text-[#1685D8] transition duration-300 group-hover:bg-[#1685D8] group-hover:text-white">
-                    <span className="text-lg">+</span>
-                  </div>
+  {index === 2 && (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className="h-7 w-7"
+    >
+      <path d="M12 3s-6 6.2-6 11a6 6 0 0 0 12 0c0-4.8-6-11-6-11Z" />
+      <path d="M9.5 16a3 3 0 0 0 5 1.5" />
+    </svg>
+  )}
 
-                </div>
+  {index === 3 && (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className="h-7 w-7"
+    >
+      <path d="M5 19 19 5" />
+      <path d="M10 5h9v9" />
+    </svg>
+  )}
 
+  {index === 4 && (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className="h-7 w-7"
+    >
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" />
+    </svg>
+  )}
+</span>
+</div>
 
-                <div className="mt-12 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#123B66] transition duration-300 group-hover:bg-[#1685D8]">
+<h3 className="mt-5 text-xl font-bold leading-tight text-[#123B66]">
+  {service}
+</h3>
 
-                  <span className="text-2xl font-light text-white">
-                    {index === 0 && "⌕"}
-                    {index === 1 && "◌"}
-                    {index === 2 && "◒"}
-                    {index === 3 && "↗"}
-                  </span>
+<div className="mt-4 h-1 w-16 rounded-full bg-[#1685D8]" />
 
-                </div>
+<p className="mt-5 text-sm leading-6 text-[#123B66]">
+  {currentLocale === "es" &&
+    [
+      "Localización precisa de fugas de agua sin daños innecesarios.",
+      "Secado profesional de edificios, paredes, suelos y techos.",
+      "Reparación y renovación tras daños por agua.",
+      "Tratamiento profesional y prevención de nuevos daños.",
+      "Control de humedad, documentación y asesoramiento.",
+    ][index]}
 
+  {currentLocale === "en" &&
+    [
+      "Precise leak detection without unnecessary damage.",
+      "Professional drying of buildings, walls, floors and ceilings.",
+      "Repair and restoration after water damage.",
+      "Professional treatment and prevention of further damage.",
+      "Moisture control, documentation and professional advice.",
+    ][index]}
 
-                <h3 className="mt-8 text-xl font-bold leading-tight text-[#123B66]">
-                  {service}
-                </h3>
+  {currentLocale === "de" &&
+    [
+      "Präzise Leckortung ohne unnötige Schäden.",
+      "Professionelle Trocknung von Gebäuden, Wänden, Böden und Decken.",
+      "Reparatur und Wiederherstellung nach Wasserschäden.",
+      "Professionelle Behandlung und Vorbeugung neuer Schäden.",
+      "Feuchtigkeitskontrolle, Dokumentation und Beratung.",
+    ][index]}
 
-                <div className="mt-8 h-1 w-10 rounded-full bg-[#1685D8] transition-all duration-300 group-hover:w-20" />
+  {currentLocale === "ru" &&
+    [
+      "Точное обнаружение утечек воды без лишних повреждений.",
+      "Профессиональная сушка зданий, стен, полов и потолков.",
+      "Ремонт и восстановление после повреждений водой.",
+      "Профессиональная обработка и предотвращение новых повреждений.",
+      "Контроль влажности, документация и консультация.",
+    ][index]}
+</p>
 
-              </div>
-
-            ))}
-
-          </div>
+<div className="mt-5 text-sm font-semibold text-[#1685D8]">
+  {currentLocale === "es" && "Saber más →"}
+  {currentLocale === "en" && "Learn more →"}
+  {currentLocale === "de" && "Mehr erfahren →"}
+  {currentLocale === "ru" && "Подробнее →"}
+</div>
+</div>
+      
+  ))}
+</div>
 
 
           <div className="mt-12 flex flex-col justify-between gap-6 rounded-[2rem] bg-[#123B66] px-8 py-8 text-white sm:flex-row sm:items-center sm:px-10">
