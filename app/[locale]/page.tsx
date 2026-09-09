@@ -399,9 +399,9 @@ export default async function Home({ params }: PageProps) {
   ].map((service, index) => (
     <div
       key={service}
-      className="group relative overflow-hidden rounded-none border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+      className="group relative overflow-hidden rounded-none border border-slate-200 bg-white p-8 flex flex-col shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
     >
- <div className="relative -mx-8 -mt-8 mb-7 aspect-square overflow-hidden rounded-none">
+ <div className="relative -mx-8 -mt-8 mb-6 aspect-square overflow-hidden rounded-none">
   
    <Image
     src={[
@@ -428,7 +428,7 @@ export default async function Home({ params }: PageProps) {
   </div>
 </div>
 
-<div className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#123B66]">
+<div className="mt-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#123B66]">
   <span className="text-white">
   {index === 0 && (
     <svg
@@ -509,7 +509,7 @@ export default async function Home({ params }: PageProps) {
 
 <div className="mt-4 h-1 w-16 rounded-full bg-[#1685D8]" />
 
-<p className="mt-5 text-sm leading-6 text-[#123B66]">
+<p className="mt-auto pt-5 text-sm leading-6 text-[#123B66]">
   {currentLocale === "es" &&
     [
       "Localización precisa de fugas de agua sin daños innecesarios.",
@@ -616,7 +616,7 @@ export default async function Home({ params }: PageProps) {
       ========================== */}
       <section className="px-6 py-24 lg:px-10">
 
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto w-full max-w-[1600px]">
 
           <div className="mb-14 max-w-2xl">
 
@@ -669,216 +669,133 @@ export default async function Home({ params }: PageProps) {
       {/* =========================
           ABOUT
       ========================== */}
-      <section
-        id="nosotros"
-        className="relative overflow-hidden bg-[#123B66] px-6 py-24 text-white lg:px-10"
-      >
+    {/* =========================
+    ABOUT
+========================= */}
+<section
+  id="nosotros"
+  className="bg-white px-6 py-24 lg:px-10"
+>
+  <div className="w-full">
+    <div className="grid items-center gap-12 lg:grid-cols-[13fr_7fr] lg:gap-16">
 
-        <div className="absolute right-[-180px] top-[-180px] h-[500px] w-[500px] rounded-full border border-white/5" />
+      {/* IMAGE */}
+      <div className="relative overflow-hidden lg:-ml-20 lg:w-[calc(100%+5rem)]">
+        <Image
+          src="/about-costa-blanca-v2.jpg"
+            unoptimized
+          alt="Costa Blanca"
+          width={1200}
+          height={800}
+          className="aspect-[3/2] h-auto w-full object-cover"
+        />
 
-        <div className="absolute bottom-[-220px] left-[-180px] h-[500px] w-[500px] rounded-full bg-[#1685D8]/10" />
+        
+      </div>
 
+      {/* CONTENT */}
+      <div className="lg:pt-6">
+        <span className="text-sm font-semibold tracking-[0.18em] text-[#62B532]">
+          {t.about.label}
+        </span>
 
-        <div className="relative mx-auto max-w-7xl">
+        <h2 className="mt-4 max-w-2xl text-4xl font-bold leading-tight tracking-tight text-[#123B66] sm:text-5xl lg:text-5xl">
+          {t.about.title}
+        </h2>
 
-          <div className="max-w-3xl">
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+          {t.about.description}
+        </p>
 
-            <span className="text-sm font-semibold tracking-[0.18em] text-[#62B532]">
-              {t.about.label}
-            </span>
+        {/* BENEFITS */}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
 
-            <h2 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              {t.about.title}
-            </h2>
-
-            <p className="mt-7 text-lg leading-8 text-white/70">
-              {t.about.description}
-            </p>
-
+          <div className="flex gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1685D8]/10 text-[#1685D8]">
+              ✓
+            </div>
+            <div>
+              <h3 className="font-bold text-[#123B66]">
+                {currentLocale === "de" && "Schnelle Reaktion"}
+                {currentLocale === "es" && "Respuesta rápida"}
+                {currentLocale === "en" && "Fast response"}
+                {currentLocale === "ru" && "Быстрая реакция"}
+              </h3>
+              <p className="mt-1 text-sm leading-6 text-slate-500">
+                {currentLocale === "de" && "Schnelle Hilfe, wenn sie benötigt wird."}
+                {currentLocale === "es" && "Atención rápida cuando más la necesita."}
+                {currentLocale === "en" && "Fast assistance when you need it most."}
+                {currentLocale === "ru" && "Быстрая помощь именно тогда, когда она нужна."}
+              </p>
+            </div>
           </div>
 
-
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
-
-            {/* FEATURE 1 */}
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur">
-
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1685D8] text-xl font-bold text-white">
-                01
-              </div>
-
-              <h3 className="mt-8 text-xl font-bold">
-
-                {currentLocale === "de" &&
-                  "Technische Kompetenz"}
-
-                {currentLocale === "es" &&
-                  "Competencia técnica"}
-
-                {currentLocale === "en" &&
-                  "Technical expertise"}
-
-                {currentLocale === "ru" &&
-                  "Техническая компетентность"}
-
-              </h3>
-
-              <p className="mt-4 text-sm leading-7 text-white/60">
-
-                {currentLocale === "de" &&
-                  "Moderne Technik und strukturierte Verfahren für eine zuverlässige Schadenanalyse."}
-
-                {currentLocale === "es" &&
-                  "Tecnología moderna y procedimientos estructurados para un análisis fiable de los daños."}
-
-                {currentLocale === "en" &&
-                  "Modern technology and structured processes for reliable damage assessment."}
-
-                {currentLocale === "ru" &&
-                  "Современные технологии и структурированные процессы для надежной оценки повреждений."}
-
-              </p>
-
+          <div className="flex gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1685D8]/10 text-[#1685D8]">
+              ✓
             </div>
-
-
-            {/* FEATURE 2 */}
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur">
-
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#62B532] text-xl font-bold text-white">
-                02
-              </div>
-
-              <h3 className="mt-8 text-xl font-bold">
-
-                {currentLocale === "de" &&
-                  "Schnelle Reaktion"}
-
-                {currentLocale === "es" &&
-                  "Respuesta rápida"}
-
-                {currentLocale === "en" &&
-                  "Fast response"}
-
-                {currentLocale === "ru" &&
-                  "Быстрое реагирование"}
-
+            <div>
+              <h3 className="font-bold text-[#123B66]">
+                {currentLocale === "de" && "Moderne Technologie"}
+                {currentLocale === "es" && "Tecnología moderna"}
+                {currentLocale === "en" && "Modern technology"}
+                {currentLocale === "ru" && "Современные технологии"}
               </h3>
-
-              <p className="mt-4 text-sm leading-7 text-white/60">
-
-                {currentLocale === "de" &&
-                  "Schnelle Koordination und klare Abläufe helfen dabei, Folgeschäden zu begrenzen."}
-
-                {currentLocale === "es" &&
-                  "Una coordinación rápida y procesos claros ayudan a limitar los daños posteriores."}
-
-                {currentLocale === "en" &&
-                  "Fast coordination and clear processes help minimize further damage."}
-
-                {currentLocale === "ru" &&
-                  "Быстрая координация и четкие процессы помогают минимизировать дальнейшие повреждения."}
-
+              <p className="mt-1 text-sm leading-6 text-slate-500">
+                {currentLocale === "de" && "Präzise Analyse und professionelle Verfahren."}
+                {currentLocale === "es" && "Análisis preciso y procedimientos profesionales."}
+                {currentLocale === "en" && "Precise analysis and professional methods."}
+                {currentLocale === "ru" && "Точный анализ и профессиональные методы."}
               </p>
-
             </div>
-
-
-            {/* FEATURE 3 */}
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur">
-
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-xl font-bold text-[#123B66]">
-                03
-              </div>
-
-              <h3 className="mt-8 text-xl font-bold">
-
-                {currentLocale === "de" &&
-                  "Transparente Dokumentation"}
-
-                {currentLocale === "es" &&
-                  "Documentación transparente"}
-
-                {currentLocale === "en" &&
-                  "Transparent documentation"}
-
-                {currentLocale === "ru" &&
-                  "Прозрачная документация"}
-
-              </h3>
-
-              <p className="mt-4 text-sm leading-7 text-white/60">
-
-                {currentLocale === "de" &&
-                  "Klare Dokumentation schafft Nachvollziehbarkeit für Kunden, Hausverwaltungen und Versicherungen."}
-
-                {currentLocale === "es" &&
-                  "Una documentación clara facilita la trazabilidad para clientes, administradores y aseguradoras."}
-
-                {currentLocale === "en" &&
-                  "Clear documentation provides transparency for customers, property managers and insurers."}
-
-                {currentLocale === "ru" &&
-                  "Понятная документация обеспечивает прозрачность для клиентов, управляющих и страховых компаний."}
-
-              </p>
-
-            </div>
-
           </div>
 
-
-          <div className="mt-12 border-t border-white/10 pt-10">
-
-            <div className="grid gap-8 md:grid-cols-2 md:items-center">
-
-              <div>
-
-                <p className="text-2xl font-semibold leading-tight sm:text-3xl">
-
-                  {currentLocale === "de" &&
-                    "Wir kümmern uns um den Schaden – Sie behalten den Überblick."}
-
-                  {currentLocale === "es" &&
-                    "Nos ocupamos del daño para que usted mantenga el control."}
-
-                  {currentLocale === "en" &&
-                    "We take care of the damage so you stay in control."}
-
-                  {currentLocale === "ru" &&
-                    "Мы занимаемся повреждением, а вы сохраняете контроль."}
-
-                </p>
-
-              </div>
-
-
-              <div>
-
-                <p className="text-sm leading-7 text-white/60">
-
-                  {currentLocale === "de" &&
-                    "OSINES verbindet technische Kompetenz, moderne Verfahren und eine strukturierte Betreuung – vom ersten Kontakt bis zur Wiederherstellung."}
-
-                  {currentLocale === "es" &&
-                    "OSINES combina competencia técnica, métodos modernos y una gestión estructurada desde el primer contacto hasta la restauración."}
-
-                  {currentLocale === "en" &&
-                    "OSINES combines technical expertise, modern methods and structured service from the first contact through to restoration."}
-
-                  {currentLocale === "ru" &&
-                    "OSINES объединяет техническую компетентность, современные методы и структурированное сопровождение от первого контакта до восстановления."}
-
-                </p>
-
-              </div>
-
+          <div className="flex gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1685D8]/10 text-[#1685D8]">
+              ✓
             </div>
+            <div>
+              <h3 className="font-bold text-[#123B66]">
+                {currentLocale === "de" && "Lokaler Ansprechpartner"}
+                {currentLocale === "es" && "Empresa local"}
+                {currentLocale === "en" && "Local partner"}
+                {currentLocale === "ru" && "Местный специалист"}
+              </h3>
+              <p className="mt-1 text-sm leading-6 text-slate-500">
+                {currentLocale === "de" && "Wir kennen die Costa Blanca und ihre Besonderheiten."}
+                {currentLocale === "es" && "Conocemos la Costa Blanca y sus necesidades."}
+                {currentLocale === "en" && "We know the Costa Blanca and its specific needs."}
+                {currentLocale === "ru" && "Мы знаем Коста-Бланку и её особенности."}
+              </p>
+            </div>
+          </div>
 
+          <div className="flex gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1685D8]/10 text-[#1685D8]">
+              ✓
+            </div>
+            <div>
+              <h3 className="font-bold text-[#123B66]">
+                {currentLocale === "de" && "Professionelle Dokumentation"}
+                {currentLocale === "es" && "Documentación profesional"}
+                {currentLocale === "en" && "Professional documentation"}
+                {currentLocale === "ru" && "Профессиональная документация"}
+              </h3>
+              <p className="mt-1 text-sm leading-6 text-slate-500">
+                {currentLocale === "de" && "Nachvollziehbare Dokumentation für Eigentümer und Versicherungen."}
+                {currentLocale === "es" && "Documentación clara para propietarios y aseguradoras."}
+                {currentLocale === "en" && "Clear documentation for owners and insurers."}
+                {currentLocale === "ru" && "Понятная документация для владельцев и страховых компаний."}
+              </p>
+            </div>
           </div>
 
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
       {/* =========================
