@@ -565,17 +565,10 @@ export default async function Home({ params }: PageProps) {
 
               <p className="text-xl font-semibold">
 
-                {currentLocale === "de" &&
-                  "Ein Schaden. Ein Ansprechpartner."}
-
-                {currentLocale === "es" &&
-                  "Un daño. Un solo contacto."}
-
-                {currentLocale === "en" &&
-                  "One claim. One point of contact."}
-
-                {currentLocale === "ru" &&
-                  "Один ущерб. Один контакт."}
+                {currentLocale === "de" && "Ein Ansprechpartner. Von der Analyse bis zur Sanierung."}
+                {currentLocale === "es" && "Un solo contacto. Desde el análisis hasta la reparación."}
+                {currentLocale === "en" && "One point of contact. From assessment to restoration."}
+                {currentLocale === "ru" && "Один контакт. От оценки до восстановления."}
 
               </p>
 
@@ -682,7 +675,7 @@ export default async function Home({ params }: PageProps) {
       {/* IMAGE */}
       <div className="relative overflow-hidden lg:-ml-20 lg:w-[calc(100%+5rem)]">
         <Image
-          src="/about-costa-blanca-v2.jpg"
+          src="/about-costa-blanca.jpg"
             unoptimized
           alt="Costa Blanca"
           width={1200}
@@ -797,13 +790,212 @@ export default async function Home({ params }: PageProps) {
   </div>
 </section>
 
+{/* =========================
+    PROCESS
+========================= */}
+<section
+  id="prozess"
+  className="bg-white px-6 py-6 lg:px-10"
+>
+  <div className="mx-auto max-w-7x1">
+    <div className="mb-12">
+      <span className="text-sm font-semibold tracking-[0.18em] text-[#1685D8]">
+        {currentLocale === "de" && "UNSER PROZESS"}
+        {currentLocale === "es" && "NUESTRO PROCESO"}
+        {currentLocale === "en" && "OUR PROCESS"}
+        {currentLocale === "ru" && "НАШ ПРОЦЕСС"}
+      </span>
+
+      <h2 className="mt-2 text-4xl font-bold leading-tight tracking-tight text-[#123B66]">
+        {currentLocale === "de" && "So arbeiten wir."}
+        {currentLocale === "es" && "Así trabajamos."}
+        {currentLocale === "en" && "How we work."}
+        {currentLocale === "ru" && "Как мы работаем."}
+      </h2>
+
+      <p className="mt-1 text-base text-slate-600">
+        {currentLocale === "de" &&
+          "Ein klarer und effizienter Prozess für beste Ergebnisse."}
+        {currentLocale === "es" &&
+          "Un proceso claro y eficiente para los mejores resultados."}
+        {currentLocale === "en" &&
+          "A clear and efficient process for the best results."}
+        {currentLocale === "ru" &&
+          "Чёткий и эффективный процесс для достижения лучших результатов."}
+      </p>
+    </div>
+
+    <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-start lg:gap-0">
+      {/* STEP 01 */}
+      <div className="flex flex-1 items-start lg:justify-center">
+        <div className="flex items-start gap-4">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#E8F4FD] text-lg font-bold text-[#1685D8]">
+            01
+          </div>
+
+          <div className="pt-1">
+            <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-full bg-[#E8F4FD] text-[#1685D8]">
+              ☎
+            </div>
+
+            <h3 className="font-bold text-[#123B66]">
+              {currentLocale === "de" && "Kontakt"}
+              {currentLocale === "es" && "Contacto"}
+              {currentLocale === "en" && "Contact"}
+              {currentLocale === "ru" && "Контакт"}
+            </h3>
+
+            <p className="mt-1 max-w-[150px] text-sm leading-5 text-slate-600">
+              {currentLocale === "de" && "Rufen Sie uns an oder schreiben Sie uns."}
+              {currentLocale === "es" && "Nos llama o nos escribe la solicitud."}
+              {currentLocale === "en" && "Call us or send us your request."}
+              {currentLocale === "ru" && "Позвоните нам или отправьте запрос."}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden pt-7 text-3xl font-light text-[#1685D8] lg:block">
+        →
+      </div>
+
+      {/* STEP 02 */}
+      <div className="flex flex-1 items-start lg:justify-center">
+        <div className="flex items-start gap-4">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#E8F4FD] text-lg font-bold text-[#1685D8]">
+            02
+          </div>
+
+          <div className="pt-1">
+            <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-full bg-[#E8F4FD] text-xl text-[#1685D8]">
+              ⌕
+            </div>
+
+            <h3 className="font-bold text-[#123B66]">
+              {currentLocale === "de" && "Analyse"}
+              {currentLocale === "es" && "Análisis"}
+              {currentLocale === "en" && "Analysis"}
+              {currentLocale === "ru" && "Анализ"}
+            </h3>
+
+            <p className="mt-1 max-w-[150px] text-sm leading-5 text-slate-600">
+              {currentLocale === "de" && "Wir bewerten die Situation mit moderner Technik."}
+              {currentLocale === "es" && "Evaluamos la situación con tecnología moderna."}
+              {currentLocale === "en" && "We assess the situation with modern technology."}
+              {currentLocale === "ru" && "Мы оцениваем ситуацию с помощью современных технологий."}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden pt-7 text-3xl font-light text-[#1685D8] lg:block">
+        →
+      </div>
+
+      {/* STEP 03 */}
+      <div className="flex flex-1 items-start lg:justify-center">
+        <div className="flex items-start gap-4">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#E8F4FD] text-lg font-bold text-[#1685D8]">
+            03
+          </div>
+
+          <div className="pt-1">
+            <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-full bg-[#E8F4FD] text-xl text-[#1685D8]">
+              ⚙
+            </div>
+
+            <h3 className="font-bold text-[#123B66]">
+              {currentLocale === "de" && "Lösung"}
+              {currentLocale === "es" && "Solución"}
+              {currentLocale === "en" && "Solution"}
+              {currentLocale === "ru" && "Решение"}
+            </h3>
+
+            <p className="mt-1 max-w-[150px] text-sm leading-5 text-slate-600">
+              {currentLocale === "de" && "Wir setzen die passende Lösung um."}
+              {currentLocale === "es" && "Aplicamos el tratamiento adecuado."}
+              {currentLocale === "en" && "We apply the right solution."}
+              {currentLocale === "ru" && "Мы применяем подходящее решение."}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden pt-7 text-3xl font-light text-[#1685D8] lg:block">
+        →
+      </div>
+
+      {/* STEP 04 */}
+      <div className="flex flex-1 items-start lg:justify-center">
+        <div className="flex items-start gap-4">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#E8F4FD] text-lg font-bold text-[#1685D8]">
+            04
+          </div>
+
+          <div className="pt-1">
+            <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-full bg-[#E8F4FD] text-xl text-[#1685D8]">
+              🔧
+            </div>
+
+            <h3 className="font-bold text-[#123B66]">
+              {currentLocale === "de" && "Restaurierung"}
+              {currentLocale === "es" && "Restauración"}
+              {currentLocale === "en" && "Restoration"}
+              {currentLocale === "ru" && "Восстановление"}
+            </h3>
+
+            <p className="mt-1 max-w-[150px] text-sm leading-5 text-slate-600">
+              {currentLocale === "de" && "Reparatur und Erneuerung Ihrer Immobilie."}
+              {currentLocale === "es" && "Reparación y renovación de su propiedad."}
+              {currentLocale === "en" && "Repair and renewal of your property."}
+              {currentLocale === "ru" && "Ремонт и восстановление вашей недвижимости."}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden pt-7 text-3xl font-light text-[#1685D8] lg:block">
+        →
+      </div>
+
+      {/* STEP 05 */}
+      <div className="flex flex-1 items-start lg:justify-center">
+        <div className="flex items-start gap-4">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#E8F4FD] text-lg font-bold text-[#1685D8]">
+            05
+          </div>
+
+          <div className="pt-1">
+            <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-full bg-[#E8F4FD] text-xl text-[#1685D8]">
+              ✓
+            </div>
+
+            <h3 className="font-bold text-[#123B66]">
+              {currentLocale === "de" && "Ergebnis"}
+              {currentLocale === "es" && "Resultado"}
+              {currentLocale === "en" && "Result"}
+              {currentLocale === "ru" && "Результат"}
+            </h3>
+
+            <p className="mt-1 max-w-[150px] text-sm leading-5 text-slate-600">
+              {currentLocale === "de" && "Ihre Immobilie ist wieder in bestem Zustand."}
+              {currentLocale === "es" && "Su tranquilidad, como debe ser."}
+              {currentLocale === "en" && "Your property is restored to the best condition."}
+              {currentLocale === "ru" && "Ваша недвижимость снова в лучшем состоянии."}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* =========================
           CONTACT / SERVICE REQUEST
       ========================== */}
       <section
         id="contacto"
-        className="relative overflow-hidden bg-white px-6 py-24 lg:px-10"
+        className="relative overflow-hidden bg-white px-6 py-16 lg:px-10"
       >
 
         <div className="absolute right-[-180px] top-[-180px] h-[450px] w-[450px] rounded-full bg-[#1685D8]/5" />
