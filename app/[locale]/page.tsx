@@ -127,7 +127,7 @@ export default async function Home({ params }: PageProps) {
               width={220}
               height={80}
               priority
-              className="h-12 w-auto object-contain"
+              className="h-18 w-auto object-contain"
             />
           </a>
 
